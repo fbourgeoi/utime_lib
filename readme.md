@@ -1,7 +1,8 @@
 # utime_lib
 ## Instancier la classe
 ```python
-utime = utime_web('user','passwd')
+import utime_lib
+utime = utime_lib.utime_web('user','passwd')
 ```
 
 ## Se logger sur le site
