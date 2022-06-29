@@ -36,3 +36,9 @@ Chaque élément représente un jour et contient:
 - L'heure de début de pointage
 - L'heure de fin de pointage
 - Un booléen qui indique une erreur éventuelle (différence entre le delta des pointages et le temps de prestation indiqué, c'est qu'il y a eu plusieurs pointages dans la journée, ce qui n'est pas inclus dans le rapport utilisé pour récupérer les pointages)
+
+
+
+
+# Tests
+Un fichier de test 'test.py' peut être créé à la racine, il  est déjà inclu dans le fichier .gitignore pour éviter de publier un mot de passe
