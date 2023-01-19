@@ -37,7 +37,12 @@ Chaque élément représente un jour et contient:
 - L'heure de fin de pointage
 - Un booléen qui indique une erreur éventuelle (différence entre le delta des pointages et le temps de prestation indiqué, c'est qu'il y a eu plusieurs pointages dans la journée, ce qui n'est pas inclus dans le rapport utilisé pour récupérer les pointages)
 
-
+## Récupérer les effectifs
+```python
+utime.utime.récupérer_effectifs(autologin=True)
+```
+Autologin permet de ne pas devoir appeler la fonction login()
+La fonction renvoie un dictionnaire avec comme clés les services et comme valeur la liste des personnes de ce service
 
 
 # Tests

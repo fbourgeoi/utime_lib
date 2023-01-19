@@ -97,3 +97,31 @@ class utime_web():
 
 
 		
+
+
+	def récupérer_effectifs(self, autologin=True):
+		""" Récupérer les effectifs par secteur """
+
+		if autologin:
+			self.login()
+
+		response = self.session.get("https://utime.cosmotime.be/present.php")
+		table_raw = response.text.split("<table class='clocking'")[1].split("</form>")[0].replace("</tr>", "")
+		table_lines = table_raw.split("<tr>")[2:-1]
+		data = {}
+		for line in table_lines:
+			
+			cells = line.replace("</td>", "").split("<td")[1:]
+			# Si service
+			if "class='minititletd'" in cells[0]:
+				service = cells[0].split("&nbsp;")[-1].replace("&amp;", "&").replace("&rsquo;", "'")
+				data[service] = []
+			else:
+				for cell in cells:
+					# print(cell)
+					if not "span" in cell:
+						continue
+					name = cell.split("] ")[1].split("</span>")[0]
+					data[service].append(name)
+
+		return data
