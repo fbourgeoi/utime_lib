@@ -1,1 +1,1 @@
-from utime_lib.utime_lib import *
+from utime_lib.utime_lib import utime_web
